@@ -1,0 +1,75 @@
+
+【目的】
+qtcreator官方发行版本太庞大了，此项目目的就是精简下qtcreator，配套的qtsdk
+在https://github.com/sunwangme/qtlite，一个精简的不带qml的qt5.
+
+【原则】
+为了以后跟踪官方的提交，此项目对代码的修改，尽量做到
+1、只是文件上的修改
+如注释cpp代码，避免依赖qml：
+#ifdef SUPPORTQML
+#ifdef SUPPORTLINUX
+注释pro文件，避免发现太多插件：
+#welcome
+
+2、不要删除文件和目录，便于后期工程的维护
+
+【修改步骤】
+
+1. build 基础框架
+app core 
+
+2.build  基础编辑器插件
+bineditor  imageview texteditor
+
+3.build 基础c++工程管理和语言编辑器插件
+projectexplorer classview cppeditor cpptools  differeditor
+glsleditor pythoneditor
+
+4. build qt项目管理插件（包括了编辑器支持）
+qmakeprojectmanager qtsupport resourceditor
+
+5.build 设计器和调试器
+debugger designer
+
+6.build 编译辅助工具
+qtcreator_ctrlc_stub(process_ctrlc_stub) //编译时候，需要这个来代理
+
+7. copy jom 编译辅助
+//编译时候，需要这个来代替nmake
+copy precompiled-tools/jom.exe to dis-dir/bin 
+
+8.build 调试辅助工具
+qtcreator_process_stub(process_stub) //调试时候需要这个来代理
+qtcreatorcdbext32 //cdb调试需要=
+
+9.build 帮助插件
+help 
+
+10.build 效率工具
+task/todo/beautifiler/bookmark/vcsbase/git/cmakeprojectmanager等等
+//从clang发行包抠出来配合beautifier
+copy precompiled-tools/clang-format.exe to dis-dir/bin 
+
+11. copy qt相关的dll和plugin目录到bin目录
+copy precompiled-tools/jom.exe to dis-dir/bin 
+
+【git备忘】
+#重置远程分支
+git reset --hard <commit-id>
+git push -f origin 3.4
+
+#下载最新版本并merge到本地库
+git fetch origin 3.4
+git merge origin/3.4
+
+#复制本地另外一个分支的提交到当前分支
+gitk <another branch>
+git cherry-pick <commit-id>
+
+#合并多个提交为一个
+git reset --mixed <commit-id>
+git add -A
+git commit -m "new note"
+
+end

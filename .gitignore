@@ -245,3 +245,6 @@ tmp/
 # qbs builds
 /*-debug/
 /*-release/
+
+# jom.exe&clang-format.exe
+!/jom.exe

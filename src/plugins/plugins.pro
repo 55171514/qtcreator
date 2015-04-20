@@ -12,51 +12,51 @@ SUBDIRS   = \
     bookmarks \
     projectexplorer \
     vcsbase \
-    perforce \
-    subversion \
+    #perforce \
+    #subversion \
     git \
-    cvs \
+    #cvs \
     cpptools \
     qtsupport \
     qmakeprojectmanager \
     debugger \
     help \
-    cpaster \
+    #cpaster \
     cmakeprojectmanager \
-    autotoolsprojectmanager \
-    fakevim \
-    emacskeys \
+    #autotoolsprojectmanager \
+    #fakevim \
+    #emacskeys \
     designer \
     resourceeditor \
-    genericprojectmanager \
-    qmljseditor \
-    qmlprojectmanager \
+    #genericprojectmanager \
+    #qmljseditor \
+    #qmlprojectmanager \
     glsleditor \
     pythoneditor \
-    mercurial \
-    bazaar \
+    #mercurial \
+    #bazaar \
     classview \
     tasklist \
-    analyzerbase \
-    qmljstools \
-    macros \
-    remotelinux \
-    android \
-    valgrind \
+    #analyzerbase \
+    #qmljstools \
+    #macros \
+    #remotelinux \
+    #android \
+    #valgrind \
     todo \
-    qnx \
-    clearcase \
-    baremetal \
-    ios \
+    #qnx \
+    #clearcase \
+    #baremetal \
+    #ios \
     beautifier \
-    qmakeandroidsupport \
-    winrt \
-    qmlprofiler \
-    welcome
+    #qmakeandroidsupport \
+    #winrt \
+    #qmlprofiler \
+    #welcome
 
 DO_NOT_BUILD_QMLDESIGNER = $$(DO_NOT_BUILD_QMLDESIGNER)
 isEmpty(DO_NOT_BUILD_QMLDESIGNER) {
-    SUBDIRS += qmldesigner
+    #SUBDIRS += qmldesigner
 } else {
     warning("QmlDesigner plugin has been disabled.")
 }
@@ -65,12 +65,12 @@ isEmpty(DO_NOT_BUILD_QMLDESIGNER) {
 isEmpty(QBS_INSTALL_DIR): QBS_INSTALL_DIR = $$(QBS_INSTALL_DIR)
 exists(../shared/qbs/qbs.pro)|!isEmpty(QBS_INSTALL_DIR): \
     SUBDIRS += \
-        qbsprojectmanager
+        #qbsprojectmanager
 
 # prefer qmake variable set on command line over env var
 isEmpty(LLVM_INSTALL_DIR):LLVM_INSTALL_DIR=$$(LLVM_INSTALL_DIR)
 !isEmpty(LLVM_INSTALL_DIR) {
-    SUBDIRS += clangcodemodel
+    #SUBDIRS += clangcodemodel
 }
 
 isEmpty(IDE_PACKAGE_MODE) {
@@ -90,5 +90,5 @@ for(p, SUBDIRS) {
 }
 
 linux-* {
-     SUBDIRS += debugger/ptracepreload.pro
+     #SUBDIRS += debugger/ptracepreload.pro
 }
