@@ -37,7 +37,7 @@ qtcreator_ctrlc_stub(process_ctrlc_stub) //编译时候，需要这个来代理
 
 7. copy jom 编译辅助
 //编译时候，需要这个来代替nmake
-copy precompiled-tools/jom.exe to dis-dir/bin 
+copy !!!downloads!!!/jom.exe to dis-dir/bin 
 
 8.build 调试辅助工具
 qtcreator_process_stub(process_stub) //调试时候需要这个来代理
@@ -49,10 +49,10 @@ help
 10.build 效率工具
 task/todo/beautifiler/bookmark/vcsbase/git/cmakeprojectmanager等等
 //从clang发行包抠出来配合beautifier
-copy precompiled-tools/clang-format.exe to dis-dir/bin 
+copy !!!downloads!!!/clang-format.exe to dis-dir/bin 
 
 11. copy qt相关的dll和plugin目录到bin目录
-copy precompiled-tools/jom.exe to dis-dir/bin 
+copy !!!downloads!!!/jom.exe to dis-dir/bin 
 
 【git备忘】
 #重置远程分支
