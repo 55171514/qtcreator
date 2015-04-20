@@ -1,7 +1,7 @@
 
 【目的】
 qtcreator官方发行版本太庞大了，此项目目的就是精简下qtcreator，配套的qtsdk
-在https://github.com/sunwangme/qtlite，一个精简的不带qml的qt5.
+(一个精简的不带qml的qt5)在https://github.com/sunwangme/qtlite
 
 【原则】
 为了以后跟踪官方的提交，此项目对代码的修改，尽量做到
