@@ -247,5 +247,5 @@ tmp/
 /*-release/
 
 # jom.exe&clang-format.exe
-!/precompiled-tools/jom.exe
-!/precompiled-tools/clang-format.exe
+!/!!!downloads!!!/jom.exe
+!/!!!downloads!!!/clang-format.exe
